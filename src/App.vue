@@ -5,7 +5,7 @@
         <img class="logoImg" src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/todolist/logo.png" alt="logo">
       </router-link>
       <ul v-if="isAuthenticated">
-        <li class="todo_sm"><router-link to="/"><span>{{ username }}的代辦</span></router-link></li>
+        <li class="todo_sm"><router-link to="/"><span>{{ username }}的待辦</span></router-link></li>
         <li><a href="#" @click.prevent="logout">登出</a></li>
       </ul>
       <ul v-else>
