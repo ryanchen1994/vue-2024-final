@@ -5,7 +5,7 @@
         <div class="inputBox">
           <input type="text" placeholder="請輸入待辦事項" v-model="newTodo">
           <a href="#" @click.prevent="addTodo">
-            <i class="fa fa-plus"></i>
+            <span class="text-white"> ＋ </span>
           </a>
         </div>
         <div class="todoList_list">
@@ -17,13 +17,13 @@
           <div class="todoList_items">
             <p v-if="filteredTodos.length === 0">目前尚無待辦事項</p>
             <ul class="todoList_item" v-else>
-              <li v-for="todo in filteredTodos" :key="todo.id">
+              <li v-for="todo in filteredTodos" :key="todo.id" class="todo-item">
                 <label class="todoList_label">
                   <input class="todoList_input" type="checkbox" :checked="todo.status" @change="toggleTodo(todo)">
                   <span>{{ todo.content }}</span>
                 </label>
-                <a href="#" @click.prevent="removeTodo(todo.id)">
-                  <i class="fa fa-times"></i>
+                <a href="#" @click.prevent="removeTodo(todo.id)" class="delete-btn">
+                  <span class="delete-text">Ｘ</span>
                 </a>
               </li>
             </ul>
@@ -37,7 +37,6 @@
     </div>
   </div>
 </template>
-
 
 
 <script>
